@@ -1207,3 +1207,64 @@ Started GET "/assets/jquery_ujs.self.js?body=1" for 189.26.100.173 at 2015-11-30
 
 
 Started GET "/assets/application.self.js?body=1" for 189.26.100.173 at 2015-11-30 03:37:06 +0000
+
+
+Started GET "/movies/1" for 189.26.100.173 at 2015-11-30 04:04:17 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.5ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (3.5ms)
+Completed 200 OK in 36ms (Views: 23.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 189.26.100.173 at 2015-11-30 04:04:17 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:04:17 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:04:17 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:04:17 +0000
+
+
+Started GET "/movies/1/similars" for 189.26.100.173 at 2015-11-30 04:04:22 +0000
+Processing by MoviesController#similars as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE (director like NULL)
+  Rendered movies/similars.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 189.26.100.173 at 2015-11-30 04:04:23 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:04:23 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:04:23 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:04:23 +0000
+
+
+Started GET "/movies/1" for 189.26.100.173 at 2015-11-30 04:11:29 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 189.26.100.173 at 2015-11-30 04:11:29 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:11:29 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:11:30 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 189.26.100.173 at 2015-11-30 04:11:30 +0000

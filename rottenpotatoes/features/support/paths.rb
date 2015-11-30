@@ -22,10 +22,11 @@ module NavigationHelpers
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
     when /the (edit|details) page for \"([^"]*)\"/
+      the_page = $1 == 'edit' ? "/#{$1}" : ""
       movie_name = $2
+      
       movie = Movie.where('title = :movie', movie: movie_name).first
-      movie_path = "/movies/#{movie.id}"
-      movie_path << '/edit' if $1 == 'edit'
+      movie_path = "/movies/#{movie.id}#{the_page}"
     
     else
       begin
