@@ -21,12 +21,19 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-    when /the (edit|details) page for \"([^"]*)\"/
-      the_page = $1 == 'edit' ? "/#{$1}" : ""
+    when /the (.*) page for \"([^"]*)\"/
+      the_page = $1
       movie_name = $2
-      
       movie = Movie.where('title = :movie', movie: movie_name).first
-      movie_path = "/movies/#{movie.id}#{the_page}"
+      
+      case the_page
+      when 'edit'
+        "/movies/#{movie.id}/edit"
+      when 'Similar Movies'
+        "/movies/#{movie.id}/similars"
+      else
+        "/movies/#{movie.id}"
+      end
     
     else
       begin

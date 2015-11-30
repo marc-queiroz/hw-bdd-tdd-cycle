@@ -63,7 +63,11 @@ class MoviesController < ApplicationController
   
   def similars
     @movie = Movie.find(params[:id])
-    @similars_movies = Movie.where("director like :director", director: @movie.director)
+    if @movie.director
+      @similar_movies = Movie.where("director like :director", director: @movie.director)
+    else
+      redirect_to root_path
+    end
   end
 
 end

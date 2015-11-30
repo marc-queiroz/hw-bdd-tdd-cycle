@@ -2,7 +2,12 @@
 
 %h2 Similars to #{@movie.title}
 
--@similars_movies.each do |similar|
-
-  %p = similar.title
+%table#similar_movies
+  %thead
+    %tr
+      %th Movie Title
+  %tbody
+    - @similar_movies.each do |similar|
+      %tr
+        %td= similar.title
   
